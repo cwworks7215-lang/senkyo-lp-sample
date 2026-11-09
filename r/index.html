@@ -19,7 +19,7 @@ ul li::marker{color:var(--basecolor)}
 /* 背景:写真+筆の跡+縦書きスローガン(固定) */
 .bgbox{z-index:0;width:100%;height:100dvh;max-height:65vw;position:fixed;left:0;top:0;overflow:hidden;background:#fff}
 .bgbox .photo{position:absolute;left:0;top:0;width:calc(100% - 530px);height:100%;overflow:hidden}
-.bgbox .photo>img:first-child{width:100%;height:100%;object-fit:cover;object-position:70% 18%}
+.bgbox .photo picture,.bgbox .photo .main{display:block;width:100%;height:100%;object-fit:cover;object-position:60% top}
 .bgbox .brush{position:absolute;left:-3%;top:-3%;height:106%;width:34%;max-width:none;object-fit:fill;opacity:.96}
 .bgbox .brush2{left:auto;right:-14%;top:-10%;height:80%;transform:rotate(180deg);opacity:.9}
 .bgbox .slogan{position:absolute;left:8%;top:18%;writing-mode:vertical-rl;color:#fff;font-weight:900;font-size:clamp(44px,4.6vw,72px);letter-spacing:.06em;line-height:1.1;text-shadow:0 0 14px rgba(0,30,130,.35)}
@@ -101,7 +101,7 @@ footer{padding:2rem;font-size:.8rem}
   #ocbt i{display:block;width:30px;height:4px;border-radius:3px;background:#fff}
   .bgbox{position:relative;height:100dvh;min-height:640px;max-height:180vw;padding-top:90px}
   .bgbox .photo{position:absolute;top:90px;width:100%;height:calc(100% - 90px)}
-  .bgbox .photo>img:first-child{object-position:72% 20%}
+  .bgbox .photo .main{object-position:center top}
   .bgbox .brush{width:44%}
   .bgbox .slogan{top:calc(90px + 6%);left:7%;font-size:56px}
   .snsbt{position:absolute;bottom:2rem;left:2rem;width:calc(100% - 4rem);justify-content:center}
@@ -114,8 +114,7 @@ footer{padding:2rem;font-size:.8rem}
 <div id="container">
   <div class="bgbox">
     <div class="photo">
-      <img src="../img/hero.jpg" alt="">
-      <img class="brush" src="../img/brush.png" alt="">
+      <picture><source srcset="../img/top_sp.jpg" media="(max-width:560px)"><img class="main" src="../img/top_pc.jpg" alt=""></picture>
       <p class="slogan">つなぐ。</p>
     </div>
   </div>
