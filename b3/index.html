@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>青山ゆうと 公式サイト(制作見本・B案)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a2a66;--blue:#1d5fd1;--sky:#e8f1fc;--ink:#222}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:#fff;line-height:1.9}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.sample{font-size:11px;text-align:center;background:#fff8d0;padding:2px}
+/* 上部 */
+.top{display:flex;justify-content:flex-end;padding:8px 6vw;background:#fff}
+.top a{background:#06c755;color:#fff;font-weight:700;font-size:14px;padding:8px 22px}
+.gnav{background:var(--navy);display:flex;justify-content:center;gap:0;font-size:13px;color:#fff}
+.gnav a{padding:8px 14px;border-left:1px solid rgba(255,255,255,.35)}
+.gnav a:first-child{border-left:0}
+.gnav a:hover{background:var(--blue)}
+/* ヒーロー */
+.hero{position:relative;height:min(78vh,720px);min-height:460px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:70% 25%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,42,102,.55),rgba(10,42,102,0) 55%)}
+.hero h1{position:absolute;left:6vw;bottom:12%;z-index:2;color:#fff;font-weight:900;font-size:clamp(46px,7.6vw,118px);line-height:1.12;letter-spacing:.02em;text-shadow:0 4px 24px rgba(0,20,60,.45)}
+.hero p{position:absolute;left:6vw;top:9%;z-index:2;color:#fff;font-weight:700;font-size:clamp(14px,1.3vw,18px);background:var(--blue);padding:4px 14px}
+/* ピル */
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;padding:48px 20px 8px}
+.pills a{background:var(--blue);color:#fff;font-weight:700;font-size:14px;padding:10px 28px;border-radius:999px}
+.pills .line{background:#06c755}
+/* 見出し */
+.h{text-align:center;margin:72px 0 28px}
+.h b{display:block;font-size:30px;font-weight:500;letter-spacing:.06em;color:var(--navy);line-height:1.2}
+.h span{font-size:12px;color:#666}
+/* 活動報告 */
+.news{max-width:760px;margin:0 auto;padding:0 20px;list-style:none}
+.news li{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ddd;padding:14px 4px;font-size:15px}
+.news li a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.news time{color:#666;font-size:13px;white-space:nowrap}
+/* メッセージ */
+.msg{display:grid;grid-template-columns:1fr 1fr;margin-top:90px;background:#f6f8fc}
+.msg .tx{padding:70px 6vw}
+.msg h2{font-size:clamp(26px,2.6vw,36px);font-weight:500;color:var(--blue);line-height:1.5;margin-bottom:24px}
+.msg p{font-size:15px;margin-bottom:1em}
+.msg .ph{background:url(../img/profile.jpg) center 20%/cover;min-height:460px}
+/* 政策 */
+.pol{max-width:1080px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pol article{border-top:4px solid var(--blue);padding-top:16px}
+.pol .n{font-size:44px;font-weight:900;color:var(--blue);line-height:1}
+.pol h3{font-size:18px;color:var(--navy);margin:8px 0}
+.pol p{font-size:14px;color:#444}
+/* 写真の帯 */
+.band{position:relative;margin-top:96px;display:grid;grid-template-columns:repeat(3,1fr);height:min(46vw,520px);overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(1.05)}
+.band h2{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:clamp(44px,8vw,120px);letter-spacing:.02em;text-shadow:0 6px 30px rgba(0,0,0,.45);text-align:center;line-height:1.15}
+.cta{text-align:center;padding:26px 20px}
+.cta a{display:inline-block;background:#06c755;color:#fff;font-weight:700;padding:12px 40px;border-radius:999px}
+.sns{display:flex;justify-content:center;gap:22px;padding:10px 0 50px}
+.sns a{width:34px;height:34px}
+.sns svg{width:34px;height:34px}
+/* プロフィール */
+.pro{max-width:860px;margin:0 auto;padding:0 20px 90px;display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
+.pro img{border-radius:50%;aspect-ratio:1;object-fit:cover;object-position:center 15%}
+.pro .nm{font-size:24px;font-weight:900}
+.pro .nm small{display:block;font-size:13px;color:var(--blue);font-weight:700}
+.pro p{font-size:14px;margin-top:10px}
+/* 締め */
+.close{background:var(--navy);color:#fff;display:grid;grid-template-columns:1fr 1.2fr;gap:5vw;padding:90px 6vw;align-items:center}
+.close h2{font-weight:900;line-height:1.3}
+.close h2 small{display:block;font-size:clamp(18px,1.8vw,24px);margin-bottom:10px}
+.close h2 span{font-size:clamp(36px,4.4vw,62px)}
+.close p{font-size:14px;margin-bottom:1em;opacity:.92}
+.close .btn{display:inline-block;margin-top:14px;border:1px solid #fff;padding:10px 40px;font-size:14px}
+footer{background:#061b44;color:#aab6cc;text-align:center;font-size:12px;padding:20px}
+@media(max-width:768px){
+  .gnav{flex-wrap:wrap;font-size:12px}
+  .gnav a{padding:6px 10px}
+  .hero{height:min(70vh,620px)}
+  .hero img{object-position:72% 20%}
+  .hero::after{background:linear-gradient(0deg,rgba(10,42,102,.7),rgba(10,42,102,0) 55%)}
+  .hero h1{bottom:8%}
+  .msg,.close{grid-template-columns:1fr}
+  .msg .tx{padding:50px 20px}
+  .msg .ph{min-height:380px}
+  .pol{grid-template-columns:1fr 1fr}
+  .band{grid-template-columns:1fr 1fr;height:70vw}
+  .band img:nth-child(3){display:none}
+  .pro{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .pro img{width:200px}
+  .close{padding:60px 20px}
+}
+</style>
+</head>
+<body>
+<p class="sample">制作見本・人物/市町村/政策はすべて架空です</p>
+<div class="top"><a href="#close">公式LINEで相談する ></a></div>
+<nav class="gnav"><a href="#">TOP</a><a href="#news">活動報告</a><a href="#pol">政策</a><a href="#pro">プロフィール</a><a href="#close">応援する</a></nav>
+
+<section class="hero">
+  <img src="../img/hero.jpg" alt="青山ゆうと">
+  <p>みなと川市議会議員候補　青山ゆうと</p>
+  <h1>声を聞く街から、<br>声が届く街へ。</h1>
+</section>
+
+<div class="pills"><a href="#pro">青山ゆうと プロフィール</a><a href="#pol">政策について</a><a class="line" href="#close">LINEでご意見を送る</a></div>
+
+<div class="h" id="news"><b>NEWS</b><span>お知らせ・活動報告</span></div>
+<ul class="news">
+  <li><a href="#">駅前で朝のごあいさつ。路線バスへのご意見をいただきました</a><time>2026年11月03日</time></li>
+  <li><a href="#">子育て中の保護者の皆さんと意見交換会を開きました</a><time>2026年10月26日</time></li>
+  <li><a href="#">町内会の防災訓練に参加し、備蓄品を確認しました</a><time>2026年10月12日</time></li>
+  <li><a href="#">みなと川市議会議員選挙への立候補を表明しました</a><time>2026年10月01日</time></li>
+</ul>
+
+<section class="msg">
+  <div class="tx">
+    <h2>声を聞く街から、<br>声が届く街へ。</h2>
+    <p>みなと川市で生まれ育ち、地元の物流会社で12年間、地域の暮らしを支える仕事をしてきました。</p>
+    <p>子育て、介護、通勤。「ここが変われば楽になるのに」という声を、たくさん聞いてきました。でも、その声が市政に届く場所は、まだ少ないままです。</p>
+    <p>聞くだけで終わらせない。一つひとつの声を、確かに市政へ届けます。</p>
+  </div>
+  <div class="ph" role="img" aria-label="青山ゆうと"></div>
+</section>
+
+<div class="h" id="pol"><b>POLICY</b><span>4つの約束</span></div>
+<div class="pol">
+  <article><p class="n">01</p><h3>子育てを、街ぐるみで</h3><p>放課後の居場所を全小学校区に。一時預かりの予約をスマホで完結。</p></article>
+  <article><p class="n">02</p><h3>災害に強い地域づくり</h3><p>避難所の備蓄と案内表示を見直し、自治会の防災訓練を後押し。</p></article>
+  <article><p class="n">03</p><h3>暮らしの足を守る</h3><p>コミュニティバスの路線と本数を、利用者の声で見直します。</p></article>
+  <article><p class="n">04</p><h3>手続きを身近に</h3><p>窓口に行かなくて済む手続きを増やし、書類の負担を減らします。</p></article>
+</div>
+
+<section class="band">
+  <img src="../img/act1.jpg" alt=""><img src="../img/act2.jpg" alt=""><img src="../img/act3.jpg" alt="">
+  <h2>この街、<br>動き出す。</h2>
+</section>
+<div class="cta"><a href="#close">公式LINEで、あなたの声を届ける</a></div>
+<div class="sns">
+  <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#d62976"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="#fff"/></svg></a>
+  <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1877f2"/><path d="M13.3 20v-6.4h2.2l.3-2.6h-2.5V9.5c0-.7.2-1.3 1.3-1.3h1.3V5.9c-.6-.1-1.3-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H8.6v2.6h2.2V20z" fill="#fff"/></svg></a>
+  <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6" fill="#06c755"/><path d="M12 5.5c-4 0-7 2.5-7 5.6 0 2.8 2.4 5.1 5.7 5.5.6.1.4.6.3 1.6 0 .3.3.5.6.3 2.6-1.5 5.4-3.6 6.6-5.5.5-.6.8-1.3.8-1.9 0-3.1-3-5.6-7-5.6z" fill="#fff"/></svg></a>
+</div>
+
+<div class="h" id="pro"><b>PROFILE</b><span>プロフィール</span></div>
+<section class="pro">
+  <img src="../img/profile.jpg" alt="">
+  <div>
+    <p class="nm"><small>みなと川市議会議員候補</small>青山ゆうと(41)</p>
+    <p>1985年、みなと川市生まれ。県立大学 地域政策学部を卒業後、地元の物流会社に入社し、配送計画と地域連携を担当。2020年から町内会の防災部長を務める。家族は妻と子ども二人。趣味はランニング。</p>
+  </div>
+</section>
+
+<section class="close" id="close">
+  <h2><small>声を聞く街から、声が届く街へ。</small><span>#みなと川をつなぐ</span></h2>
+  <div>
+    <p>暮らしの困りごと、市政へのご意見を、公式LINEで受け付けています。</p>
+    <p>いただいた声は、すべて自分で読みます。すぐに答えが出せないことも、どこで止まっているのかをお伝えします。</p>
+    <p>この街の「困った」を、一緒に一つずつ減らしていきましょう。</p>
+    <a class="btn" href="#">公式LINEで声を届ける</a>
+  </div>
+</section>
+<footer>青山ゆうと事務所(架空)　© Yuto Aoyama (Sample)</footer>
+</body>
+</html>
