@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>青山ゆうと｜C案 和・明朝・余白(見本)</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14254a;--ai:#1f4e96;--paper:#f7f5ef;--rule:#c9c3b4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper) url(../img/washi.jpg) 0 0/800px repeat;color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;line-height:2.1;font-size:15px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.note{font-size:12px;text-align:center;padding:4px;border-bottom:1px solid var(--rule)}
+header{display:flex;justify-content:space-between;align-items:baseline;padding:22px 6vw;border-bottom:1px solid var(--rule)}
+header .nm{font-family:"Zen Old Mincho";font-weight:900;font-size:22px;letter-spacing:.2em}
+header nav{display:flex;gap:32px;font-size:14px}
+header nav .line{color:#06a447;font-weight:500;border-bottom:1px solid}
+/* FV: 縦書きの大きな明朝と写真、余白で見せる */
+.fv{display:grid;grid-template-columns:1fr 46%;gap:0;padding:70px 6vw 90px;align-items:end}
+.fv .tate{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:36px;height:560px}
+.fv h1{writing-mode:vertical-rl;font-family:"Zen Old Mincho";font-weight:900;font-size:clamp(50px,6vw,84px);letter-spacing:.18em;line-height:1.2}
+.fv .sub{writing-mode:vertical-rl;font-family:"Zen Old Mincho";font-size:17px;letter-spacing:.3em;color:var(--ai);padding-top:40px}
+.fv .seal{writing-mode:vertical-rl;align-self:flex-end;font-family:"Zen Old Mincho";font-weight:900;font-size:30px;background:var(--ai);color:#fff;padding:18px 10px;letter-spacing:.2em}
+.fv img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:75% 20%;filter:saturate(.85)}
+/* 本文: 左に縦書き見出し、右に文章 */
+.blk{display:grid;grid-template-columns:120px 1fr;gap:40px;padding:80px 6vw;border-top:1px solid var(--rule);max-width:1180px;margin:0 auto}
+.blk h2{writing-mode:vertical-rl;font-family:"Zen Old Mincho";font-weight:900;font-size:34px;letter-spacing:.25em;color:var(--ai)}
+.msg p{font-family:"Zen Old Mincho";font-size:18px;margin-bottom:1.2em;max-width:34em}
+.msg .lead{font-size:28px;font-weight:900;margin-bottom:1.4em;line-height:1.6}
+.pol dl{display:grid;grid-template-columns:auto 1fr;column-gap:36px}
+.pol dt{font-family:"Zen Old Mincho";font-weight:900;font-size:26px;color:var(--ai);padding:22px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+.pol dd{padding:24px 0;border-bottom:1px solid var(--rule)}
+.pol dd b{display:block;font-family:"Zen Old Mincho";font-size:20px;line-height:1.6}
+.pro{display:grid;grid-template-columns:300px 1fr;gap:44px}
+.pro .name{font-family:"Zen Old Mincho";font-weight:900;font-size:30px;letter-spacing:.2em}
+.pro table{border-collapse:collapse;margin-top:14px}
+.pro td{padding:6px 24px 6px 0;vertical-align:top}
+.pro td:first-child{font-family:"Zen Old Mincho";color:var(--ai);white-space:nowrap}
+.act ul{list-style:none;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+.act li:first-child{grid-row:span 2}
+.act img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.act time{font-size:13px;color:var(--ai)}
+.cta{text-align:center;padding:90px 6vw;border-top:1px solid var(--rule)}
+.cta h2{font-family:"Zen Old Mincho";font-weight:900;font-size:30px;letter-spacing:.15em;margin-bottom:16px}
+.cta .line{display:inline-block;background:#06c755;color:#fff;font-weight:500;padding:16px 60px;font-size:18px;margin:16px 0}
+.cta .sns{display:flex;justify-content:center;gap:28px;font-size:14px}
+.cta .sns a{border-bottom:1px solid}
+footer{text-align:center;font-size:12px;padding:30px;border-top:1px solid var(--rule)}
+.fl{display:none}
+@media(max-width:768px){
+  header nav{display:none}
+  .fv{grid-template-columns:1fr;padding:30px 20px 50px;gap:24px}
+  .fv .tate{height:380px;gap:18px}
+  .fv h1{font-size:46px}
+  .fv .sub{font-size:14px;padding-top:20px}
+  .fv .seal{font-size:22px}
+  .blk{grid-template-columns:1fr;gap:20px;padding:56px 20px}
+  .blk h2{writing-mode:horizontal-tb;font-size:26px}
+  .msg .lead{font-size:22px}.msg p{font-size:16px}
+  .pol dl{grid-template-columns:1fr}
+  .pol dt{border-bottom:0;padding-bottom:0}
+  .pro{grid-template-columns:1fr}
+  .act ul{grid-template-columns:1fr}.act li:first-child{grid-row:auto}
+  .fl{display:block;position:fixed;bottom:12px;right:12px;background:#06c755;color:#fff;padding:12px 20px;font-weight:500}
+}
+</style>
+</head>
+<body>
+<p class="note">※制作見本(C案・和/明朝/余白)。人物・市町村・政策はすべて架空です。</p>
+<header><span class="nm">青山ゆうと</span><nav><a href="#m">ごあいさつ</a><a href="#p">政策</a><a href="#r">略歴</a><a href="#a">活動</a><a class="line" href="#c">LINEで相談</a></nav></header>
+<section class="fv">
+  <div class="tate">
+    <h1>声を、<br>まちの力に。</h1>
+    <p class="sub">みなと川市議会議員候補</p>
+    <p class="seal">青山ゆうと</p>
+  </div>
+  <img src="../img/hero.jpg" alt="">
+</section>
+<section class="blk msg" id="m">
+  <h2>ごあいさつ</h2>
+  <div>
+    <p class="lead">困ったときに、<br>相談できる人がいる街へ。</p>
+    <p>みなと川市で生まれ育ち、地元の企業で十二年間、地域の物流を支える仕事をしてきました。</p>
+    <p>子育て、介護、通勤。毎日の暮らしの中で「ここが変われば楽になるのに」という声を、たくさん聞いてきました。その声を、市政に届けます。</p>
+  </div>
+</section>
+<section class="blk pol" id="p">
+  <h2>四つの約束</h2>
+  <dl>
+    <dt>一</dt><dd><b>子育てを、街ぐるみで</b>放課後の居場所を全小学校区に。一時預かりの予約をスマホで完結できるようにします。</dd>
+    <dt>二</dt><dd><b>災害に強い地域づくり</b>避難所の備蓄と案内表示を見直し、自治会ごとの防災訓練を市が後押しします。</dd>
+    <dt>三</dt><dd><b>暮らしの足を守る</b>コミュニティバスの路線と本数を、利用者の声で見直します。</dd>
+    <dt>四</dt><dd><b>手続きを、もっと身近に</b>窓口に行かなくても済む手続きを増やし、書類の負担を減らします。</dd>
+  </dl>
+</section>
+<section class="blk" id="r">
+  <h2>略歴</h2>
+  <div class="pro">
+    <img src="../img/profile.jpg" alt="">
+    <div>
+      <p class="name">青山 ゆうと</p>
+      <table>
+        <tr><td>昭和六十年</td><td>みなと川市に生まれる</td></tr>
+        <tr><td>平成二十年</td><td>県立大学 地域政策学部 卒業<br>地元の物流会社に入社</td></tr>
+        <tr><td>令和二年</td><td>町内会 防災部長</td></tr>
+        <tr><td>令和八年</td><td>市議会議員選挙への立候補を表明</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="blk act" id="a">
+  <h2>活動報告</h2>
+  <ul>
+    <li><img src="../img/act1.jpg" alt=""><time>2026.11.03</time><p>駅前で朝のごあいさつ。路線バスへのご意見をいただきました。</p></li>
+    <li><img src="../img/act2.jpg" alt=""><time>2026.10.26</time><p>保護者の皆さんと意見交換会。</p></li>
+    <li><img src="../img/act3.jpg" alt=""><time>2026.10.12</time><p>町内会の防災訓練に参加。</p></li>
+  </ul>
+</section>
+<section class="cta" id="c">
+  <h2>あなたの声を、聞かせてください。</h2>
+  <p>暮らしの困りごと、市政へのご意見は公式LINEから。</p>
+  <a class="line" href="#">公式LINEで送る</a>
+  <div class="sns"><a href="#">Instagram</a><a href="#">Facebook</a></div>
+</section>
+<footer>青山ゆうと事務所(架空)</footer>
+<a class="fl" href="#c">LINEで相談</a>
+</body>
+</html>
