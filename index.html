@@ -3,140 +3,217 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>青山ゆうと 公式サイト｜みなと川市議会議員 候補(見本)</title>
-<meta name="description" content="みなと川市をもっと暮らしやすく。青山ゆうとのビジョン・政策・活動報告。※このページは制作見本で、人物・団体は架空です。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<title>青山ゆうと 公式サイト(制作見本)</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+<style>
+/* 参考サイトの実測値をそのまま使用 */
+:root{--basecolor:rgba(0,30,130,1);--subcolor2:rgba(0,95,180,1);--line:#333;--text:#333}
+html,body{margin:0;padding:0;scroll-behavior:smooth}
+body *{box-sizing:border-box;position:relative;line-height:1.8}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;transition:.3s}
+ul{padding-left:1.5rem}
+ul li::marker{color:var(--basecolor)}
+.sample{position:fixed;left:0;top:0;z-index:50;font-size:11px;background:#fff8d0;padding:2px 10px;border-radius:0 0 5px 0}
+#container{width:100%;display:flex;flex-wrap:nowrap;font-family:"Noto Sans JP",sans-serif;color:var(--text);background:#fff;word-break:break-all}
+/* 背景:写真+筆の跡+縦書きスローガン(固定) */
+.bgbox{z-index:0;width:100%;height:100dvh;max-height:65vw;position:fixed;left:0;top:0;overflow:hidden;background:#fff}
+.bgbox .photo{position:absolute;left:0;top:0;width:calc(100% - 530px);height:100%;overflow:hidden}
+.bgbox .photo picture,.bgbox .photo .main{display:block;width:100%;height:100%;object-fit:cover;object-position:60% top}
+.bgbox .brush{position:absolute;left:-3%;top:-3%;height:106%;width:34%;max-width:none;object-fit:fill;opacity:.96}
+.bgbox .brush2{left:auto;right:-14%;top:-10%;height:80%;transform:rotate(180deg);opacity:.9}
+.bgbox .slogan{position:absolute;left:8%;top:18%;writing-mode:vertical-rl;color:#fff;font-weight:900;font-size:clamp(44px,4.6vw,72px);letter-spacing:.06em;line-height:1.1;text-shadow:0 0 14px rgba(0,30,130,.35)}
+#site-header{width:calc(100% - 530px);height:100dvh;order:1}
+.snsbt{position:fixed;bottom:2rem;left:4vw;background:#fff;padding:1rem;border-radius:5px;display:flex;gap:1rem 25px;align-items:center;z-index:5}
+.snsbt a{display:block;width:30px;height:30px}
+.snsbt a:hover{opacity:.6}
+.snsbt svg{width:30px;height:30px;display:block}
+/* 右の縦メニュー */
+#menubox{width:130px;position:fixed;right:0;top:0;height:100%;z-index:10}
+#mainmenu{display:flex;flex-direction:column;align-items:center;height:100%;padding:2rem 0 0}
+#mainmenu h1{margin:2rem auto;display:flex;flex-direction:row-reverse;gap:2px;font-weight:900;color:#111}
+#mainmenu h1 .nm{writing-mode:vertical-rl;font-size:2rem;letter-spacing:.04em;line-height:1}
+#mainmenu h1 .pos{writing-mode:vertical-rl;font-size:.95rem;line-height:1.1;padding-top:2px}
+#mainmenu ul{list-style:none;margin:0;padding:0 0 2rem}
+#mainmenu li{margin-top:.5rem}
+#mainmenu li a{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:100px;color:#fff;text-decoration:none;background:rgba(0,30,130,.8);width:6em;height:6em;font-size:13px;font-weight:700;line-height:1.3}
+#mainmenu li a:hover{background:rgba(1,60,147,1)}
+#mainmenu li a.line{background:#06c755}
+/* 中央の本文カラム */
+#site-content{background:#fff;width:400px;order:2;box-shadow:5px 0 10px rgba(0,0,0,.05),-5px 0 10px rgba(0,0,0,.05);min-height:calc(100vh + 20px);margin:-10px 0;z-index:3}
+section{padding:2rem}
+section h1{border-bottom:3px solid #005293;display:block;width:fit-content;font-size:1.2rem;margin:3rem auto;padding:0 0 .5rem;text-align:center;font-weight:900}
+section .catch{text-align:center;color:var(--basecolor);font-size:1.9rem;margin:3rem auto;font-weight:900}
+section .catch span{font-size:1.3rem;color:var(--text);display:block;margin-top:-.5rem}
+.subcatch{text-align:center;color:var(--basecolor);font-family:"Noto Serif JP",serif;letter-spacing:.3em;margin:-2rem auto 2.5rem;font-size:15px}
+.message{font-weight:bold;font-size:1.1rem;line-height:2rem;margin:0 auto 3rem}
+.message p{font-size:15px;line-height:2;margin:0 0 1em}
+.sign{font-family:"Yuji Syuku",serif;font-size:2rem;text-align:right;color:#111;margin-top:1.5rem!important}
+.policy h2{font-size:1.6rem;color:var(--basecolor);font-weight:900;text-align:left;margin:0;padding:2rem 0 0;border-top:1px solid rgba(2,17,46,.2);line-height:1.6}
+.policy h2:first-of-type{border-top:none}
+.policy ul{margin:.8rem 0 2rem}
+.policy li{font-size:.9rem}
+.fullimg{display:block;margin:5rem auto -2rem;z-index:5}
+#area dl{margin:0}
+#area dt{font-weight:bold;color:var(--basecolor);font-size:1.4rem;padding-right:3rem;line-height:1.6}
+#area dt::before{position:absolute;font-size:4.5rem;font-family:"Barlow Condensed",sans-serif;font-weight:600;line-height:1;color:rgba(0,82,147,.2);right:0;top:-.5rem}
+#area dt:nth-of-type(1)::before{content:'1'}#area dt:nth-of-type(2)::before{content:'2'}#area dt:nth-of-type(3)::before{content:'3'}
+#area dd{margin:0 auto 1rem;padding:.5rem 0 1rem;border-bottom:1px solid #ccc;font-size:.9rem}
+.ymbox{background:var(--basecolor);border-radius:10px;padding:1rem;color:#fff;margin-top:2rem}
+.ymbox h2{border-bottom:3px solid #fff;margin:0 auto 1rem;padding:0 0 .5rem;width:fit-content;font-size:1.2rem}
+.ymbox ul{list-style:none;margin:0;padding:0}
+.ymbox li{font-weight:bold;display:flex;gap:.5rem}
+.ymbox li::before{content:'✔';flex:none}
+#profile .catch{font-size:2.1rem}
+#profile .catch+p{font-weight:bold}
+#profile table{margin:2rem auto;border-collapse:collapse;border-bottom:1px solid var(--line);width:100%}
+#profile th,#profile td{padding:.5rem;border-top:1px solid var(--line);text-align:left;font-size:.95rem}
+#profile th{padding:.5rem .75rem;background:rgba(0,82,147,.05);white-space:nowrap}
+#profile dl{margin:0}
+#profile dt,#profile dd{padding:0 0 0 1.25em;margin:0}
+#profile dt{font-weight:bold}
+#profile dd{padding-bottom:.5rem}
+#profile dt::before{content:'●';position:absolute;color:var(--basecolor);left:0;top:0;z-index:5}
+#profile dt::after,#profile dd::after{content:'';position:absolute;left:.5em;top:.5em;width:1px;height:100%;z-index:2;background:rgba(2,17,46,.2)}
+#profile dd:last-of-type::after{display:none}
+#contact{background:rgba(0,82,147,.05);margin-bottom:-6rem;padding-bottom:7rem}
+#contact .catch{font-size:1.8rem}
+.btn-line{display:block;text-align:center;background:#06c755;color:#fff;font-weight:900;text-decoration:none;border-radius:2rem;padding:1rem;font-size:1.1rem}
+.sns2{display:flex;gap:10px;margin-top:1rem}
+.sns2 a{flex:1;text-align:center;text-decoration:none;font-weight:bold;color:var(--basecolor);background:#fff;border-radius:2rem;padding:.7rem}
+footer{padding:2rem;font-size:.8rem}
+#pagetop{z-index:10;position:sticky;bottom:2rem;padding:0 2rem;text-align:right}
+#pagetop a{width:4rem;height:4rem;display:inline-flex;align-items:center;justify-content:center;background:rgba(0,30,130,.8);border-radius:4rem;color:#fff;text-decoration:none;font-size:1.4rem}
+#menubox2{display:none}
+@media(max-width:860px){
+  #site-header{display:none}
+  #site-content{width:calc(100vw - 170px);margin:0 auto 0 0}
+  #menubox{width:170px}
+  .bgbox .photo{width:100%}
+}
+@media(max-width:560px){
+  #container{display:block}
+  #menubox{display:none}
+  #menubox2{display:flex;position:absolute;top:0;left:0;width:100%;height:90px;background:#fff;z-index:40;justify-content:space-between;align-items:center;padding:0 1rem}
+  #menubox2 .logo{font-weight:900;font-size:1.5rem;color:#111;line-height:1.1}
+  #menubox2 .logo small{display:block;font-size:.7rem}
+  #ocbt{width:70px;height:70px;border-radius:4rem;background:var(--basecolor);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:.6rem;text-decoration:none}
+  #ocbt i{display:block;width:30px;height:4px;border-radius:3px;background:#fff}
+  .bgbox{position:relative;height:100dvh;min-height:640px;max-height:180vw;padding-top:90px}
+  .bgbox .photo{position:absolute;top:90px;width:100%;height:calc(100% - 90px)}
+  .bgbox .photo .main{object-position:center top}
+  .bgbox .brush{width:44%}
+  .bgbox .slogan{top:calc(90px + 6%);left:7%;font-size:56px}
+  .snsbt{position:absolute;bottom:2rem;left:2rem;width:calc(100% - 4rem);justify-content:center}
+  #site-content{width:100%;margin:0;box-shadow:none}
+}
+</style>
 </head>
 <body>
-<div class="sample-note">※制作見本です。人物・市町村・政策はすべて架空のものです。</div>
-
-<header class="site-header">
-  <a class="logo" href="#top">青山ゆうと<span>Official Site</span></a>
-  <nav class="gnav">
-    <a href="#vision">ビジョン</a><a href="#policy">政策</a><a href="#profile">プロフィール</a><a href="#report">活動報告</a><a class="nav-line" href="#contact">LINEで相談</a>
-  </nav>
-</header>
-
-<main id="top">
-  <!-- ファーストビュー -->
-  <section class="hero">
-    <div class="hero-photo"><img src="img/hero.jpg" alt="青山ゆうとの写真"></div>
-    <div class="hero-brush" aria-hidden="true"></div>
-    <div class="hero-copy">
-      <p class="hero-catch">つなぐ、<br>この街の<br>あした。</p>
+<p class="sample">制作見本・人物/市町村/政策はすべて架空です</p>
+<div id="container">
+  <div class="bgbox">
+    <div class="photo">
+      <picture><source srcset="img/top_sp.jpg" media="(max-width:560px)"><img class="main" src="img/top_pc.jpg" alt=""></picture>
+      <p class="slogan">つなぐ。</p>
     </div>
-    <div class="hero-name">
-      <p class="hero-role">みなと川市議会議員 候補</p>
-      <p class="hero-fullname">青山 ゆうと</p>
-      <p class="hero-kana">あおやま ゆうと</p>
+  </div>
+  <header id="site-header">
+    <div class="snsbt">
+      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#d62976"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="#fff"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1877f2"/><path d="M13.3 20v-6.4h2.2l.3-2.6h-2.5V9.5c0-.7.2-1.3 1.3-1.3h1.3V5.9c-.6-.1-1.3-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3V11H8.6v2.6h2.2V20z" fill="#fff"/></svg></a>
+      <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6" fill="#06c755"/><path d="M12 5.5c-4 0-7 2.5-7 5.6 0 2.8 2.4 5.1 5.7 5.5.6.1.4.6.3 1.6 0 .3.3.5.6.3 2.6-1.5 5.4-3.6 6.6-5.5.5-.6.8-1.3.8-1.9 0-3.1-3-5.6-7-5.6z" fill="#fff"/></svg></a>
     </div>
-  </section>
+  </header>
+  <div id="menubox">
+    <nav id="mainmenu">
+      <h1><span class="nm">青山ゆうと</span><span class="pos">みなと川市議会議員候補</span></h1>
+      <ul>
+        <li><a href="#policy">主要政策</a></li>
+        <li><a href="#profile">プロ<br>フィール</a></li>
+        <li><a href="#area">地元の<br>取り組み</a></li>
+        <li><a class="line" href="#contact">LINEで<br>相談</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="menubox2"><p class="logo"><small>みなと川市議会議員候補</small>青山ゆうと</p><a id="ocbt" href="#policy"><i></i><i></i><i></i>メニュー</a></div>
 
-  <!-- ビジョン -->
-  <section id="vision" class="vision">
-    <div class="inner">
-      <h2 class="sec-title"><span>VISION</span>ごあいさつ</h2>
-      <p class="vision-lead">「困ったときに、相談できる人がいる街へ」</p>
-      <div class="vision-text">
-        <p>みなと川市で生まれ育ち、地元の企業で12年間、地域の物流を支える仕事をしてきました。</p>
-        <p>子育て、介護、通勤。毎日の暮らしの中で「ここが変われば楽になるのに」という声を、たくさん聞いてきました。</p>
-        <p>その声を、市政に届ける役割を担いたい。一つひとつの声に耳を傾け、できることから確実に形にしていきます。</p>
-      </div>
-      <p class="vision-sign">青山 ゆうと</p>
-    </div>
-  </section>
+  <div id="site-content">
+    <main>
+      <section id="message">
+        <h1>挨拶文</h1>
+        <p class="catch">つなぐ。</p>
+        <p class="subcatch">ひとを、まちを、あしたへ。</p>
+        <div class="message">
+          <p>みなと川市で生まれ育ち、地元の物流会社で12年間、地域の暮らしを支える仕事をしてきました。</p>
+          <p>子育て、介護、通勤。毎日の暮らしの中で「ここが変われば楽になるのに」という声を、たくさん聞いてきました。</p>
+          <p>町内会の防災部長として、災害への備えが地域のつながりで決まることも学びました。</p>
+          <p>一人ひとりの声を市政につなぎ、できることから確実に形にしていきます。困ったときに相談できる人がいる街を、皆さまとつくります。</p>
+          <p class="sign">青山ゆうと</p>
+        </div>
+      </section>
 
-  <!-- 政策 -->
-  <section id="policy" class="policy">
-    <div class="inner">
-      <h2 class="sec-title"><span>POLICY</span>4つの約束</h2>
-      <div class="policy-grid">
-        <article class="policy-card">
-          <p class="policy-no">01</p>
-          <h3>子育てを、街ぐるみで</h3>
-          <p>放課後の居場所を全小学校区に。一時預かりの予約をスマホで完結できるようにします。</p>
-        </article>
-        <article class="policy-card">
-          <p class="policy-no">02</p>
-          <h3>災害に強い地域づくり</h3>
-          <p>避難所の備蓄と案内表示を見直し、自治会ごとの防災訓練を市が後押しします。</p>
-        </article>
-        <article class="policy-card">
-          <p class="policy-no">03</p>
-          <h3>暮らしの足を守る</h3>
-          <p>コミュニティバスの路線と本数を利用者の声で見直し、高齢者の移動を支えます。</p>
-        </article>
-        <article class="policy-card">
-          <p class="policy-no">04</p>
-          <h3>手続きを、もっと身近に</h3>
-          <p>窓口に行かなくても済む手続きを増やし、待ち時間と書類の負担を減らします。</p>
-        </article>
-      </div>
-    </div>
-  </section>
+      <section id="policy" class="policy">
+        <h1>青山ゆうとの主要政策</h1>
+        <img src="img/act2.jpg" alt="">
+        <div style="margin-top:2rem">
+          <h2>子育てを、街ぐるみで</h2>
+          <ul><li>放課後の居場所を全小学校区に整備</li><li>一時預かりの予約をスマホで完結</li></ul>
+          <h2>災害に強い地域づくり</h2>
+          <ul><li>避難所の備蓄と案内表示を見直し</li><li>自治会ごとの防災訓練を市が後押し</li></ul>
+          <h2>暮らしの足を守る</h2>
+          <ul><li>コミュニティバスの路線と本数を利用者の声で見直し</li><li>高齢者の通院・買い物の移動を支援</li></ul>
+          <h2>手続きを、もっと身近に</h2>
+          <ul><li>窓口に行かなくても済む手続きを拡大</li><li>書類と待ち時間の負担を軽減</li></ul>
+        </div>
+      </section>
 
-  <!-- プロフィール -->
-  <section id="profile" class="profile">
-    <div class="inner profile-wrap">
-      <div class="profile-photo"><img src="img/profile.jpg" alt="プロフィール写真"></div>
-      <div class="profile-body">
-        <h2 class="sec-title left"><span>PROFILE</span>プロフィール</h2>
-        <p class="profile-name">青山 ゆうと<small>1985年 みなと川市生まれ・41歳</small></p>
-        <dl class="career">
+      <div class="fullimg"><img src="img/act1.jpg" alt=""></div>
+      <section id="area">
+        <h1>みなと川をさらに前へ</h1>
+        <dl>
+          <dt>駅前の朝あいさつで、<br>通勤の声を聞く</dt>
+          <dd>毎週月曜の朝、駅前に立ち、通勤・通学の皆さんから路線バスの本数や駐輪場についてご意見をいただいています。</dd>
+          <dt>保護者の皆さんと<br>意見交換会</dt>
+          <dd>子育て中の保護者の皆さんと公民館で意見交換会を開き、放課後の居場所や一時預かりの課題をうかがいました。</dd>
+          <dt>町内会の防災訓練で<br>備えを点検</dt>
+          <dd>防災部長として訓練を企画し、防災倉庫の備蓄品を町内会の皆さんと一つずつ確認しました。</dd>
+        </dl>
+        <div class="ymbox">
+          <h2>地域で取り組んできたこと</h2>
+          <ul><li>町内会の防災訓練を年2回に</li><li>通学路の危険箇所を地図にまとめて共有</li><li>地域の祭りの運営を10年続けて担当</li></ul>
+        </div>
+      </section>
+
+      <div class="fullimg"><img src="img/profile.jpg" alt=""></div>
+      <section id="profile">
+        <h1>プロフィール</h1>
+        <p class="catch">青山ゆうと<span>みなと川市議会議員候補</span></p>
+        <p>1985年 みなと川市生まれ。県立大学 地域政策学部を卒業後、地元の物流会社に入社し、配送計画と地域連携を担当。2020年から町内会の防災部長を務める。家族は妻と子ども二人。</p>
+        <table>
+          <tr><th>誕生日</th><td>1985年5月12日</td></tr>
+          <tr><th>趣味</th><td>ランニング、地域の祭りの手伝い</td></tr>
+          <tr><th>好きな言葉</th><td>一歩ずつ、確実に</td></tr>
+        </table>
+        <dl>
           <dt>2004年</dt><dd>みなと川市立第二高校 卒業</dd>
-          <dt>2008年</dt><dd>県立大学 地域政策学部 卒業</dd>
-          <dt>2008年</dt><dd>地元の物流会社に入社(配送計画・地域連携を担当)</dd>
+          <dt>2008年</dt><dd>県立大学 地域政策学部 卒業／地元の物流会社に入社</dd>
           <dt>2020年</dt><dd>町内会 防災部長</dd>
           <dt>2026年</dt><dd>みなと川市議会議員選挙への立候補を表明</dd>
         </dl>
-        <p class="profile-hobby"><b>趣味</b>ランニング、地元の祭りの手伝い</p>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- 活動報告 -->
-  <section id="report" class="report">
-    <div class="inner">
-      <h2 class="sec-title"><span>REPORT</span>活動報告</h2>
-      <div class="report-grid">
-        <a class="report-card" href="#">
-          <img src="img/act1.jpg" alt="">
-          <div><time>2026.11.03</time><p>駅前で朝のごあいさつ。通勤中の方から路線バスについてご意見をいただきました。</p></div>
-        </a>
-        <a class="report-card" href="#">
-          <img src="img/act2.jpg" alt="">
-          <div><time>2026.10.26</time><p>子育て中の保護者の皆さんと意見交換会を開きました。</p></div>
-        </a>
-        <a class="report-card" href="#">
-          <img src="img/act3.jpg" alt="">
-          <div><time>2026.10.12</time><p>町内会の防災訓練に参加。避難所の備蓄品を確認しました。</p></div>
-        </a>
-      </div>
-      <p class="more"><a href="#">活動報告をもっと見る</a></p>
-    </div>
-  </section>
-
-  <!-- お問い合わせ・SNS -->
-  <section id="contact" class="contact">
-    <div class="inner">
-      <h2 class="sec-title white"><span>CONTACT</span>ご意見・ご相談</h2>
-      <p class="contact-lead">暮らしの困りごと、市政へのご意見をお聞かせください。<br>公式LINEから、いつでも送れます。</p>
-      <a class="btn-line" href="#">公式LINEで送る</a>
-      <ul class="sns">
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>青山ゆうと事務所(架空)</p>
-  <p class="copy">© Yuto Aoyama (Sample)</p>
-</footer>
-
-<a class="float-line" href="#contact">LINEで相談</a>
+      <section id="contact">
+        <h1>ご意見・ご相談</h1>
+        <p class="catch">声を、聞かせてください。</p>
+        <p>暮らしの困りごと、市政へのご意見は、公式LINEからお気軽にお送りください。</p>
+        <a class="btn-line" href="#">公式LINEで送る</a>
+        <div class="sns2"><a href="#">Instagram</a><a href="#">Facebook</a></div>
+      </section>
+    </main>
+    <div id="pagetop"><a href="#container" aria-label="ページの先頭へ">↑</a></div>
+    <footer>青山ゆうと事務所(架空)<br>© Yuto Aoyama (Sample)</footer>
+  </div>
+</div>
 </body>
 </html>
